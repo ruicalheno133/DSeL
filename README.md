@@ -66,6 +66,7 @@ For now, there are the following data types:
 	Incremental within cases.
 	For now it is basically an Int.
 - **Int**
+	
 	Random Integer.
 	
 	| Option  | Description | Optional? |
@@ -74,7 +75,9 @@ For now, there are the following data types:
 	| `MAX` | Maximum possible value. | Yes (`default: 100`) |
 
 	`COLUMN foo TYPE INT MIN 200 MAX 300`
+
 	`COLUMN foo TYPE INT MAX 500`
+	
 	`COLUMN foo TYPE INT MIN 5`
 
 - **Number** 
