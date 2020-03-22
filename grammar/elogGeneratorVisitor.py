@@ -17,16 +17,16 @@ class elogGeneratorVisitor(ParseTreeVisitor):
         self.columns = {}
         self.last_timestamp = 0
 
-    def get_random_value(self, c_type): 
+    def get_random_value(self, c_obj): 
         value = ""
-        if c_type == "Number": 
+        if c_obj['type'] == "Number": 
             value = round(random.random(), 3)
-        elif c_type == "Int":
-            value = int(random.random() * 1000)
-        elif c_type == "Timestamp":
+        elif c_obj['type'] == "Int":
+            value = random.randint(c_obj['min'], c_obj['max'])
+        elif c_obj['type'] == "Timestamp":
             value = int(random.random() * 1000) + self.last_timestamp
             self.last_timestamp = value
-        elif c_type == "String": 
+        elif c_obj['type'] == "String": 
             value = "randomString"
 
         return value
@@ -36,8 +36,8 @@ class elogGeneratorVisitor(ParseTreeVisitor):
         row += f"{case_id},"
         row += f"{self.activities[activity]}" 
 
-        for c_name, c_type in self.columns.items(): 
-            row += f",{self.get_random_value(c_type)}"
+        for c_obj in self.columns.values(): 
+            row += f",{self.get_random_value(c_obj)}"
 
         row += '\n'
         return row 
@@ -134,8 +134,20 @@ class elogGeneratorVisitor(ParseTreeVisitor):
     def visitColumn(self, ctx:elogGeneratorParser.ColumnContext):
         c_name = str(ctx.TEXT())
         c_type = ctx.c_type().t.text
+        c_obj = {}
 
-        self.columns[c_name] = c_type
+        if c_type == "Int":
+            minv = int(str(ctx.c_type().int_options().minv.text)) if ctx.c_type().int_options().minv else 0
+            maxv = int(str(ctx.c_type().int_options().maxv.text)) if ctx.c_type().int_options().maxv else 100
+            c_obj = {
+                "type" : c_type,
+                "min"  : minv, 
+                "max"  : maxv
+            }
+        else:
+            c_obj = {'type': c_type}
+        
+        self.columns[c_name] = c_obj
 
         return self.visitChildren(ctx)
 

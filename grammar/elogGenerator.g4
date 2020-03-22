@@ -37,10 +37,16 @@ columns     : column*
 column      : COLUMN TEXT c_type ; 
 
 c_type      : TYPE t=STRING_TYPE 
-            | TYPE t=INT_TYPE 
-            | TYPE t=NUMBER_TYPE 
-            | TYPE t=TIMESTAMP_TYPE
+            | TYPE t=INT_TYPE int_options
+            | TYPE t=NUMBER_TYPE
+            | TYPE t=TIMESTAMP_TYPE 
             ;
+
+int_options : MIN minv=INT 
+            | MAX maxv=INT 
+            | MIN minv=INT MAX maxv=INT
+            | 
+            ; 
 
 /* Lexer */
 
@@ -56,11 +62,18 @@ STRING_TYPE : 'String' ;
 NUMBER_TYPE : 'Number' ; 
 INT_TYPE    : 'Int' ;
 TIMESTAMP_TYPE : 'Timestamp' ;
+MAX         : 'MAX';
+MIN         : 'MIN';
 
-ID      : [_][0-9]+ ;
-INT     : [0-9]+ ;
-TEXT    : [A-z]+[0-9]* ;
-STR     : '"' [A-z]+ '"' ;
-FILENAME : [A-z./]+ ;
+fragment QUOTE          : '"';
+fragment LETTER         : [A-z] ; 
+fragment DIGIT          : [0-9] ; 
+fragment UNDERSCORE     : '_' ;
+
+FILENAME : [A-z0-9/.]+ '.' LETTER+ ;
+ID      : UNDERSCORE DIGIT+ ;
+INT     : DIGIT+ ;
+TEXT    : LETTER+ DIGIT* ;
+
 
 IGNORE : ('\r' | '\n' | ' ' | '\t')+  -> skip;
