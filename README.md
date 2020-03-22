@@ -61,13 +61,12 @@ CaseID,ActivityID,Activity,timestamp,var0,var1
 For now, there are the following data types: 
 
 - **Timestamp** 
+
 	Timestamp of a given activity. 
 	Random value. 
 	Incremental within cases.
 	For now it is basically an Int.
-- **Int**
-	
-	Random Integer.
+- **Int** - Random Integer.
 	
 	| Option  | Description | Optional? |
 	|---------|------------|------------|
@@ -77,13 +76,15 @@ For now, there are the following data types:
 	`COLUMN foo TYPE INT MIN 200 MAX 300`
 
 	`COLUMN foo TYPE INT MAX 500`
-	
+
 	`COLUMN foo TYPE INT MIN 5`
 
 - **Number** 
+
 	Float. 
 	Random value between 0-100.
 - **String**
+
 	String.
 	Random String.
 
