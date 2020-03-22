@@ -32,11 +32,11 @@ _Example.dsel_
 GENERATE LOG 
 OUTPUT example.csv
 ACTIVITIES 
-	a : _1
+    a : _1
     b : _2 
     c : _3
 TRACES 
-	a - b - c
+    a - b - c
     a - c
 COLUMN timestamp TYPE Timestamp 
 COLUMN var0 TYPE Int
