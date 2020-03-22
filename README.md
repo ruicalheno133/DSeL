@@ -14,7 +14,7 @@ ACTIVITIES
 TRACES 
 	<a_name> [- <a_name>] ... 
 	...
-[COLUMN <c_name> TYPE <c_type>]...
+[COLUMN <c_name> TYPE <c_type> t_options]...
 CASES <n_cases>
 
 ```
@@ -23,8 +23,10 @@ CASES <n_cases>
 - Activities _names_ and _ids_ are declared in `ACTIVITIES`.
 - Each case follows one of the declared `TRACES`.
 - Each record has the default columns : _CaseID_, _ActivityID_, _Activity_.
- - Extra columns can be defined using `COLUMN`. 
-Each column can be of one of these types: `Timestamp`, `Int`, `Number` and `String`.
+- Extra columns can be defined using `COLUMN`. 
+
+	Each column can be of one of these types: `Timestamp`, `Int`, `Number` and `String`.
+- `t_options` varies from type to type (see [Types](#types))
 
 _Example.dsel_
 
@@ -59,16 +61,25 @@ CaseID,ActivityID,Activity,timestamp,var0,var1
 For now, there are the following data types: 
 
 - **Timestamp** 
-Timestamp of a given activity. 
-Random value. 
-Incremental within cases.
-For now it is basically an Int.
+	Timestamp of a given activity. 
+	Random value. 
+	Incremental within cases.
+	For now it is basically an Int.
 - **Int**
-Integer. 
-Random value between 0-100.
+	Random Integer.
+	
+	| Option  | Description | Optional? |
+	|---------|------------|------------|
+	| `MIN` | Minimum possible value. | Yes (`default: 0`) |
+	| `MAX` | Maximum possible value. | Yes (`default: 100`) |
+
+	`COLUMN foo TYPE INT MIN 200 MAX 300`
+	`COLUMN foo TYPE INT MAX 500`
+	`COLUMN foo TYPE INT MIN 5`
+
 - **Number** 
-Float. 
-Random value between 0-100.
+	Float. 
+	Random value between 0-100.
 - **String**
 	String.
 	Random String.
