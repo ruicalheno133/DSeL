@@ -6,8 +6,7 @@ It's pronounced _Diesel_.
 ## Syntax 
 
 ```
-GENERATE [LOG|DF]
-OUTPUT <filepath>
+GENERATE [LOG OUTPUT <filepath> | DF]
 ACTIVITIES 
 	<a_name> : <a_id>
 	... 
@@ -19,7 +18,10 @@ CASES <n_cases>
 
 ```
 
-- It generates an _Event Log_ with `<n_cases>`.
+- Use `LOG OUTPUT <filepath>` to generate an _Event Log_ as a _csv_ file. 
+
+	Use `DF` to generate an _Event Log_ as a _pandas Dataframe_ 
+- Generated _Event Logs_ have `<n_cases>`.
 - Activities _names_ and _ids_ are declared in `ACTIVITIES`.
 - Each case follows one of the declared `TRACES`.
 - Each record has the default columns : _CaseID_, _ActivityID_, _Activity_.
@@ -47,6 +49,7 @@ CASES 2
 ```
 
 Generates the following _example.csv_ :
+
 ```
 CaseID,ActivityID,Activity,timestamp,var0,var1
 1, _1, a, 0, 10, 20 
