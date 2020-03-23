@@ -66,6 +66,7 @@ For now, there are the following data types:
 	Random value. 
 	Incremental within cases.
 	For now it is basically an Int.
+
 - **Int** - Random Integer.
 	
 	| Option  | Description | Optional? |
@@ -73,16 +74,26 @@ For now, there are the following data types:
 	| `MIN` | Minimum possible value. | Yes (`default: 0`) |
 	| `MAX` | Maximum possible value. | Yes (`default: 100`) |
 
-	`COLUMN foo TYPE INT MIN 200 MAX 300`
+	`COLUMN foo TYPE Int MIN 200 MAX 300`
 
-	`COLUMN foo TYPE INT MAX 500`
+	`COLUMN foo TYPE Int MAX 500`
 
-	`COLUMN foo TYPE INT MIN 5`
+	`COLUMN foo TYPE Int MIN 5`
 
-- **Number** 
+- **Number** - Random Decimal.
 
-	Float. 
-	Random value between 0-100.
+	| Option  | Description | Optional? |
+	|---------|------------|------------|
+	| `MIN` | Minimum possible value. | Yes (`default: 0`) |
+	| `MAX` | Maximum possible value. | Yes (`default: 100`) |
+	| 'DEC_CASES | Number of decimal cases. | Yes (`default: 2`) |
+
+	`COLUMN foo TYPE Number MIN 10.131 MAX 11.2 DEC_CASES 3`
+
+	`COLUMN foo TYPE Number MAX 50.5 DEC_CASES 1`
+
+	`COLUMN foo TYPE Number MIN 5.20`
+
 - **String**
 
 	String.

@@ -17,16 +17,36 @@ class elogGeneratorVisitor(ParseTreeVisitor):
         self.columns = {}
         self.last_timestamp = 0
 
+    def get_int_value(self, c_obj):
+        minv = float(c_obj.get('MIN', 0))
+        maxv = float(c_obj.get('MAX', 100))
+        cases = int(c_obj.get('DEC_CASES', 2))
+        value = round(random.uniform(minv, maxv), cases)
+
+        return value
+
+    def get_dec_value(self, c_obj):
+        minv = int(c_obj.get('MIN', 0))
+        maxv = int(c_obj.get('MAX', 100))
+        value = random.randint(minv,maxv)
+
+        return value
+
     def get_random_value(self, c_obj): 
         value = ""
+
         if c_obj['type'] == "Number": 
-            value = round(random.random(), 3)
+            value = self.get_int_value(c_obj)
+
         elif c_obj['type'] == "Int":
-            value = random.randint(c_obj['min'], c_obj['max'])
+            value = self.get_dec_value(c_obj)
+
         elif c_obj['type'] == "Timestamp":
             value = int(random.random() * 1000) + self.last_timestamp
             self.last_timestamp = value
+
         elif c_obj['type'] == "String": 
+
             value = "randomString"
 
         return value
@@ -136,16 +156,19 @@ class elogGeneratorVisitor(ParseTreeVisitor):
         c_type = ctx.c_type().t.text
         c_obj = {}
 
+        c_obj['type'] = c_type
+
         if c_type == "Int":
-            minv = int(str(ctx.c_type().int_options().minv.text)) if ctx.c_type().int_options().minv else 0
-            maxv = int(str(ctx.c_type().int_options().maxv.text)) if ctx.c_type().int_options().maxv else 100
-            c_obj = {
-                "type" : c_type,
-                "min"  : minv, 
-                "max"  : maxv
-            }
-        else:
-            c_obj = {'type': c_type}
+
+            for option in ctx.c_type().int_option():
+                opt_name, opt_val = self.visitInt_option(option)
+                c_obj[opt_name] = opt_val
+
+        elif c_type == "Number":
+
+            for option in ctx.c_type().dec_option():
+                opt_name, opt_val = self.visitDec_option(option)
+                c_obj[opt_name] = opt_val
         
         self.columns[c_name] = c_obj
 
@@ -155,6 +178,14 @@ class elogGeneratorVisitor(ParseTreeVisitor):
     # Visit a parse tree produced by elogGeneratorParser#c_type.
     def visitC_type(self, ctx:elogGeneratorParser.C_typeContext):
         return self.visitChildren(ctx)
+
+    # Visit a parse tree produced by elogGeneratorParser#int_option.
+    def visitInt_option(self, ctx:elogGeneratorParser.Int_optionContext):
+        return ctx.opt_name.text, ctx.opt_value.text
+
+    # Visit a parse tree produced by elogGeneratorParser#dec_option.
+    def visitDec_option(self, ctx:elogGeneratorParser.Dec_optionContext):
+        return ctx.opt_name.text, ctx.opt_value.text
 
 
 

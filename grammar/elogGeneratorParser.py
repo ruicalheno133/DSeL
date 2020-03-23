@@ -11,36 +11,41 @@ else:
 
 def serializedATN():
     with StringIO() as buf:
-        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\27")
-        buf.write("c\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b")
-        buf.write("\t\b\4\t\t\t\4\n\t\n\4\13\t\13\4\f\t\f\4\r\t\r\3\2\3\2")
-        buf.write("\3\3\3\3\3\3\3\3\3\3\3\3\3\4\3\4\3\4\3\4\3\4\3\5\3\5\6")
-        buf.write("\5*\n\5\r\5\16\5+\3\6\3\6\3\6\3\6\3\7\3\7\6\7\64\n\7\r")
-        buf.write("\7\16\7\65\3\b\3\b\3\b\7\b;\n\b\f\b\16\b>\13\b\3\t\3\t")
-        buf.write("\3\t\3\n\7\nD\n\n\f\n\16\nG\13\n\3\13\3\13\3\13\3\13\3")
-        buf.write("\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\5\fV\n\f\3\r\3\r\3")
-        buf.write("\r\3\r\3\r\3\r\3\r\3\r\3\r\5\ra\n\r\3\r\2\2\16\2\4\6\b")
-        buf.write("\n\f\16\20\22\24\26\30\2\2\2`\2\32\3\2\2\2\4\34\3\2\2")
-        buf.write("\2\6\"\3\2\2\2\b\'\3\2\2\2\n-\3\2\2\2\f\61\3\2\2\2\16")
-        buf.write("\67\3\2\2\2\20?\3\2\2\2\22E\3\2\2\2\24H\3\2\2\2\26U\3")
-        buf.write("\2\2\2\30`\3\2\2\2\32\33\5\4\3\2\33\3\3\2\2\2\34\35\7")
-        buf.write("\5\2\2\35\36\7\6\2\2\36\37\7\7\2\2\37 \7\23\2\2 !\5\6")
-        buf.write("\4\2!\5\3\2\2\2\"#\5\b\5\2#$\5\f\7\2$%\5\22\n\2%&\5\20")
-        buf.write("\t\2&\7\3\2\2\2\')\7\b\2\2(*\5\n\6\2)(\3\2\2\2*+\3\2\2")
-        buf.write("\2+)\3\2\2\2+,\3\2\2\2,\t\3\2\2\2-.\7\26\2\2./\7\3\2\2")
-        buf.write("/\60\7\24\2\2\60\13\3\2\2\2\61\63\7\t\2\2\62\64\5\16\b")
-        buf.write("\2\63\62\3\2\2\2\64\65\3\2\2\2\65\63\3\2\2\2\65\66\3\2")
-        buf.write("\2\2\66\r\3\2\2\2\67<\7\26\2\289\7\4\2\29;\7\26\2\2:8")
-        buf.write("\3\2\2\2;>\3\2\2\2<:\3\2\2\2<=\3\2\2\2=\17\3\2\2\2><\3")
-        buf.write("\2\2\2?@\7\n\2\2@A\7\25\2\2A\21\3\2\2\2BD\5\24\13\2CB")
-        buf.write("\3\2\2\2DG\3\2\2\2EC\3\2\2\2EF\3\2\2\2F\23\3\2\2\2GE\3")
-        buf.write("\2\2\2HI\7\13\2\2IJ\7\26\2\2JK\5\26\f\2K\25\3\2\2\2LM")
-        buf.write("\7\f\2\2MV\7\r\2\2NO\7\f\2\2OP\7\17\2\2PV\5\30\r\2QR\7")
-        buf.write("\f\2\2RV\7\16\2\2ST\7\f\2\2TV\7\20\2\2UL\3\2\2\2UN\3\2")
-        buf.write("\2\2UQ\3\2\2\2US\3\2\2\2V\27\3\2\2\2WX\7\22\2\2Xa\7\25")
-        buf.write("\2\2YZ\7\21\2\2Za\7\25\2\2[\\\7\22\2\2\\]\7\25\2\2]^\7")
-        buf.write("\21\2\2^a\7\25\2\2_a\3\2\2\2`W\3\2\2\2`Y\3\2\2\2`[\3\2")
-        buf.write("\2\2`_\3\2\2\2a\31\3\2\2\2\b+\65<EU`")
+        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\31")
+        buf.write("s\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b")
+        buf.write("\t\b\4\t\t\t\4\n\t\n\4\13\t\13\4\f\t\f\4\r\t\r\4\16\t")
+        buf.write("\16\3\2\3\2\3\3\3\3\3\3\3\3\3\3\3\3\3\4\3\4\3\4\3\4\3")
+        buf.write("\4\3\5\3\5\6\5,\n\5\r\5\16\5-\3\6\3\6\3\6\3\6\3\7\3\7")
+        buf.write("\6\7\66\n\7\r\7\16\7\67\3\b\3\b\3\b\7\b=\n\b\f\b\16\b")
+        buf.write("@\13\b\3\t\3\t\3\t\3\n\7\nF\n\n\f\n\16\nI\13\n\3\13\3")
+        buf.write("\13\3\13\3\13\3\f\3\f\3\f\3\f\3\f\7\fT\n\f\f\f\16\fW\13")
+        buf.write("\f\3\f\3\f\3\f\7\f\\\n\f\f\f\16\f_\13\f\3\f\3\f\5\fc\n")
+        buf.write("\f\3\r\3\r\3\r\3\r\5\ri\n\r\3\16\3\16\3\16\3\16\3\16\3")
+        buf.write("\16\5\16q\n\16\3\16\2\2\17\2\4\6\b\n\f\16\20\22\24\26")
+        buf.write("\30\32\2\2\2q\2\34\3\2\2\2\4\36\3\2\2\2\6$\3\2\2\2\b)")
+        buf.write("\3\2\2\2\n/\3\2\2\2\f\63\3\2\2\2\169\3\2\2\2\20A\3\2\2")
+        buf.write("\2\22G\3\2\2\2\24J\3\2\2\2\26b\3\2\2\2\30h\3\2\2\2\32")
+        buf.write("p\3\2\2\2\34\35\5\4\3\2\35\3\3\2\2\2\36\37\7\5\2\2\37")
+        buf.write(" \7\6\2\2 !\7\7\2\2!\"\7\24\2\2\"#\5\6\4\2#\5\3\2\2\2")
+        buf.write("$%\5\b\5\2%&\5\f\7\2&\'\5\22\n\2\'(\5\20\t\2(\7\3\2\2")
+        buf.write("\2)+\7\b\2\2*,\5\n\6\2+*\3\2\2\2,-\3\2\2\2-+\3\2\2\2-")
+        buf.write(".\3\2\2\2.\t\3\2\2\2/\60\7\30\2\2\60\61\7\3\2\2\61\62")
+        buf.write("\7\25\2\2\62\13\3\2\2\2\63\65\7\t\2\2\64\66\5\16\b\2\65")
+        buf.write("\64\3\2\2\2\66\67\3\2\2\2\67\65\3\2\2\2\678\3\2\2\28\r")
+        buf.write("\3\2\2\29>\7\30\2\2:;\7\4\2\2;=\7\30\2\2<:\3\2\2\2=@\3")
+        buf.write("\2\2\2><\3\2\2\2>?\3\2\2\2?\17\3\2\2\2@>\3\2\2\2AB\7\n")
+        buf.write("\2\2BC\7\27\2\2C\21\3\2\2\2DF\5\24\13\2ED\3\2\2\2FI\3")
+        buf.write("\2\2\2GE\3\2\2\2GH\3\2\2\2H\23\3\2\2\2IG\3\2\2\2JK\7\13")
+        buf.write("\2\2KL\7\30\2\2LM\5\26\f\2M\25\3\2\2\2NO\7\f\2\2Oc\7\r")
+        buf.write("\2\2PQ\7\f\2\2QU\7\17\2\2RT\5\30\r\2SR\3\2\2\2TW\3\2\2")
+        buf.write("\2US\3\2\2\2UV\3\2\2\2Vc\3\2\2\2WU\3\2\2\2XY\7\f\2\2Y")
+        buf.write("]\7\16\2\2Z\\\5\32\16\2[Z\3\2\2\2\\_\3\2\2\2][\3\2\2\2")
+        buf.write("]^\3\2\2\2^c\3\2\2\2_]\3\2\2\2`a\7\f\2\2ac\7\20\2\2bN")
+        buf.write("\3\2\2\2bP\3\2\2\2bX\3\2\2\2b`\3\2\2\2c\27\3\2\2\2de\7")
+        buf.write("\22\2\2ei\7\27\2\2fg\7\21\2\2gi\7\27\2\2hd\3\2\2\2hf\3")
+        buf.write("\2\2\2i\31\3\2\2\2jk\7\22\2\2kq\7\26\2\2lm\7\21\2\2mq")
+        buf.write("\7\26\2\2no\7\23\2\2oq\7\27\2\2pj\3\2\2\2pl\3\2\2\2pn")
+        buf.write("\3\2\2\2q\33\3\2\2\2\13-\67>GU]bhp")
         return buf.getvalue()
 
 
@@ -57,13 +62,13 @@ class elogGeneratorParser ( Parser ):
     literalNames = [ "<INVALID>", "':'", "'-'", "'GENERATE'", "'LOG'", "'OUTPUT'", 
                      "'ACTIVITIES'", "'TRACES'", "'CASES'", "'COLUMN'", 
                      "'TYPE'", "'String'", "'Number'", "'Int'", "'Timestamp'", 
-                     "'MAX'", "'MIN'" ]
+                     "'MAX'", "'MIN'", "'DEC_CASES'" ]
 
     symbolicNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "GENERATE", 
                       "LOG", "OUTPUT", "ACTIVITIES", "TRACES", "CASES", 
                       "COLUMN", "TYPE", "STRING_TYPE", "NUMBER_TYPE", "INT_TYPE", 
-                      "TIMESTAMP_TYPE", "MAX", "MIN", "FILENAME", "ID", 
-                      "INT", "TEXT", "IGNORE" ]
+                      "TIMESTAMP_TYPE", "MAX", "MIN", "DEC_CASES", "FILENAME", 
+                      "ID", "DECIMAL", "INT", "TEXT", "IGNORE" ]
 
     RULE_s = 0
     RULE_g_type = 1
@@ -76,10 +81,12 @@ class elogGeneratorParser ( Parser ):
     RULE_columns = 8
     RULE_column = 9
     RULE_c_type = 10
-    RULE_int_options = 11
+    RULE_int_option = 11
+    RULE_dec_option = 12
 
     ruleNames =  [ "s", "g_type", "body", "activities", "a_mapping", "traces", 
-                   "t_list", "count", "columns", "column", "c_type", "int_options" ]
+                   "t_list", "count", "columns", "column", "c_type", "int_option", 
+                   "dec_option" ]
 
     EOF = Token.EOF
     T__0=1
@@ -98,11 +105,13 @@ class elogGeneratorParser ( Parser ):
     TIMESTAMP_TYPE=14
     MAX=15
     MIN=16
-    FILENAME=17
-    ID=18
-    INT=19
-    TEXT=20
-    IGNORE=21
+    DEC_CASES=17
+    FILENAME=18
+    ID=19
+    DECIMAL=20
+    INT=21
+    TEXT=22
+    IGNORE=23
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
@@ -141,7 +150,7 @@ class elogGeneratorParser ( Parser ):
         self.enterRule(localctx, 0, self.RULE_s)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 24
+            self.state = 26
             self.g_type()
         except RecognitionException as re:
             localctx.exception = re
@@ -192,15 +201,15 @@ class elogGeneratorParser ( Parser ):
         self.enterRule(localctx, 2, self.RULE_g_type)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 26
-            self.match(elogGeneratorParser.GENERATE)
-            self.state = 27
-            self.match(elogGeneratorParser.LOG)
             self.state = 28
-            self.match(elogGeneratorParser.OUTPUT)
+            self.match(elogGeneratorParser.GENERATE)
             self.state = 29
-            self.match(elogGeneratorParser.FILENAME)
+            self.match(elogGeneratorParser.LOG)
             self.state = 30
+            self.match(elogGeneratorParser.OUTPUT)
+            self.state = 31
+            self.match(elogGeneratorParser.FILENAME)
+            self.state = 32
             self.body()
         except RecognitionException as re:
             localctx.exception = re
@@ -251,13 +260,13 @@ class elogGeneratorParser ( Parser ):
         self.enterRule(localctx, 4, self.RULE_body)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 32
-            self.activities()
-            self.state = 33
-            self.traces()
             self.state = 34
-            self.columns()
+            self.activities()
             self.state = 35
+            self.traces()
+            self.state = 36
+            self.columns()
+            self.state = 37
             self.count()
         except RecognitionException as re:
             localctx.exception = re
@@ -303,15 +312,15 @@ class elogGeneratorParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 37
+            self.state = 39
             self.match(elogGeneratorParser.ACTIVITIES)
-            self.state = 39 
+            self.state = 41 
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while True:
-                self.state = 38
+                self.state = 40
                 self.a_mapping()
-                self.state = 41 
+                self.state = 43 
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if not (_la==elogGeneratorParser.TEXT):
@@ -356,11 +365,11 @@ class elogGeneratorParser ( Parser ):
         self.enterRule(localctx, 8, self.RULE_a_mapping)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 43
-            self.match(elogGeneratorParser.TEXT)
-            self.state = 44
-            self.match(elogGeneratorParser.T__0)
             self.state = 45
+            self.match(elogGeneratorParser.TEXT)
+            self.state = 46
+            self.match(elogGeneratorParser.T__0)
+            self.state = 47
             self.match(elogGeneratorParser.ID)
         except RecognitionException as re:
             localctx.exception = re
@@ -406,15 +415,15 @@ class elogGeneratorParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 47
+            self.state = 49
             self.match(elogGeneratorParser.TRACES)
-            self.state = 49 
+            self.state = 51 
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while True:
-                self.state = 48
+                self.state = 50
                 self.t_list()
-                self.state = 51 
+                self.state = 53 
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if not (_la==elogGeneratorParser.TEXT):
@@ -460,17 +469,17 @@ class elogGeneratorParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 53
+            self.state = 55
             self.match(elogGeneratorParser.TEXT)
-            self.state = 58
+            self.state = 60
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while _la==elogGeneratorParser.T__1:
-                self.state = 54
+                self.state = 56
                 self.match(elogGeneratorParser.T__1)
-                self.state = 55
+                self.state = 57
                 self.match(elogGeneratorParser.TEXT)
-                self.state = 60
+                self.state = 62
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 
@@ -513,9 +522,9 @@ class elogGeneratorParser ( Parser ):
         self.enterRule(localctx, 14, self.RULE_count)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 61
+            self.state = 63
             self.match(elogGeneratorParser.CASES)
-            self.state = 62
+            self.state = 64
             self.match(elogGeneratorParser.INT)
         except RecognitionException as re:
             localctx.exception = re
@@ -558,13 +567,13 @@ class elogGeneratorParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 67
+            self.state = 69
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while _la==elogGeneratorParser.COLUMN:
-                self.state = 64
+                self.state = 66
                 self.column()
-                self.state = 69
+                self.state = 71
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 
@@ -611,11 +620,11 @@ class elogGeneratorParser ( Parser ):
         self.enterRule(localctx, 18, self.RULE_column)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 70
-            self.match(elogGeneratorParser.COLUMN)
-            self.state = 71
-            self.match(elogGeneratorParser.TEXT)
             self.state = 72
+            self.match(elogGeneratorParser.COLUMN)
+            self.state = 73
+            self.match(elogGeneratorParser.TEXT)
+            self.state = 74
             self.c_type()
         except RecognitionException as re:
             localctx.exception = re
@@ -639,15 +648,25 @@ class elogGeneratorParser ( Parser ):
         def STRING_TYPE(self):
             return self.getToken(elogGeneratorParser.STRING_TYPE, 0)
 
-        def int_options(self):
-            return self.getTypedRuleContext(elogGeneratorParser.Int_optionsContext,0)
-
-
         def INT_TYPE(self):
             return self.getToken(elogGeneratorParser.INT_TYPE, 0)
 
+        def int_option(self, i:int=None):
+            if i is None:
+                return self.getTypedRuleContexts(elogGeneratorParser.Int_optionContext)
+            else:
+                return self.getTypedRuleContext(elogGeneratorParser.Int_optionContext,i)
+
+
         def NUMBER_TYPE(self):
             return self.getToken(elogGeneratorParser.NUMBER_TYPE, 0)
+
+        def dec_option(self, i:int=None):
+            if i is None:
+                return self.getTypedRuleContexts(elogGeneratorParser.Dec_optionContext)
+            else:
+                return self.getTypedRuleContext(elogGeneratorParser.Dec_optionContext,i)
+
 
         def TIMESTAMP_TYPE(self):
             return self.getToken(elogGeneratorParser.TIMESTAMP_TYPE, 0)
@@ -668,41 +687,60 @@ class elogGeneratorParser ( Parser ):
 
         localctx = elogGeneratorParser.C_typeContext(self, self._ctx, self.state)
         self.enterRule(localctx, 20, self.RULE_c_type)
+        self._la = 0 # Token type
         try:
-            self.state = 83
+            self.state = 96
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,4,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input,6,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 74
+                self.state = 76
                 self.match(elogGeneratorParser.TYPE)
-                self.state = 75
+                self.state = 77
                 localctx.t = self.match(elogGeneratorParser.STRING_TYPE)
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 76
-                self.match(elogGeneratorParser.TYPE)
-                self.state = 77
-                localctx.t = self.match(elogGeneratorParser.INT_TYPE)
                 self.state = 78
-                self.int_options()
+                self.match(elogGeneratorParser.TYPE)
+                self.state = 79
+                localctx.t = self.match(elogGeneratorParser.INT_TYPE)
+                self.state = 83
+                self._errHandler.sync(self)
+                _la = self._input.LA(1)
+                while _la==elogGeneratorParser.MAX or _la==elogGeneratorParser.MIN:
+                    self.state = 80
+                    self.int_option()
+                    self.state = 85
+                    self._errHandler.sync(self)
+                    _la = self._input.LA(1)
+
                 pass
 
             elif la_ == 3:
                 self.enterOuterAlt(localctx, 3)
-                self.state = 79
+                self.state = 86
                 self.match(elogGeneratorParser.TYPE)
-                self.state = 80
+                self.state = 87
                 localctx.t = self.match(elogGeneratorParser.NUMBER_TYPE)
+                self.state = 91
+                self._errHandler.sync(self)
+                _la = self._input.LA(1)
+                while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << elogGeneratorParser.MAX) | (1 << elogGeneratorParser.MIN) | (1 << elogGeneratorParser.DEC_CASES))) != 0):
+                    self.state = 88
+                    self.dec_option()
+                    self.state = 93
+                    self._errHandler.sync(self)
+                    _la = self._input.LA(1)
+
                 pass
 
             elif la_ == 4:
                 self.enterOuterAlt(localctx, 4)
-                self.state = 81
+                self.state = 94
                 self.match(elogGeneratorParser.TYPE)
-                self.state = 82
+                self.state = 95
                 localctx.t = self.match(elogGeneratorParser.TIMESTAMP_TYPE)
                 pass
 
@@ -716,79 +754,135 @@ class elogGeneratorParser ( Parser ):
         return localctx
 
 
-    class Int_optionsContext(ParserRuleContext):
+    class Int_optionContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
-            self.minv = None # Token
-            self.maxv = None # Token
+            self.opt_name = None # Token
+            self.opt_value = None # Token
 
         def MIN(self):
             return self.getToken(elogGeneratorParser.MIN, 0)
 
-        def INT(self, i:int=None):
-            if i is None:
-                return self.getTokens(elogGeneratorParser.INT)
-            else:
-                return self.getToken(elogGeneratorParser.INT, i)
+        def INT(self):
+            return self.getToken(elogGeneratorParser.INT, 0)
 
         def MAX(self):
             return self.getToken(elogGeneratorParser.MAX, 0)
 
         def getRuleIndex(self):
-            return elogGeneratorParser.RULE_int_options
+            return elogGeneratorParser.RULE_int_option
 
         def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitInt_options" ):
-                return visitor.visitInt_options(self)
+            if hasattr( visitor, "visitInt_option" ):
+                return visitor.visitInt_option(self)
             else:
                 return visitor.visitChildren(self)
 
 
 
 
-    def int_options(self):
+    def int_option(self):
 
-        localctx = elogGeneratorParser.Int_optionsContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 22, self.RULE_int_options)
+        localctx = elogGeneratorParser.Int_optionContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 22, self.RULE_int_option)
         try:
-            self.state = 94
+            self.state = 102
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,5,self._ctx)
-            if la_ == 1:
+            token = self._input.LA(1)
+            if token in [elogGeneratorParser.MIN]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 85
-                self.match(elogGeneratorParser.MIN)
-                self.state = 86
-                localctx.minv = self.match(elogGeneratorParser.INT)
+                self.state = 98
+                localctx.opt_name = self.match(elogGeneratorParser.MIN)
+                self.state = 99
+                localctx.opt_value = self.match(elogGeneratorParser.INT)
                 pass
-
-            elif la_ == 2:
+            elif token in [elogGeneratorParser.MAX]:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 87
-                self.match(elogGeneratorParser.MAX)
-                self.state = 88
-                localctx.maxv = self.match(elogGeneratorParser.INT)
+                self.state = 100
+                localctx.opt_name = self.match(elogGeneratorParser.MAX)
+                self.state = 101
+                localctx.opt_value = self.match(elogGeneratorParser.INT)
                 pass
+            else:
+                raise NoViableAltException(self)
 
-            elif la_ == 3:
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class Dec_optionContext(ParserRuleContext):
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+            self.opt_name = None # Token
+            self.opt_value = None # Token
+
+        def MIN(self):
+            return self.getToken(elogGeneratorParser.MIN, 0)
+
+        def DECIMAL(self):
+            return self.getToken(elogGeneratorParser.DECIMAL, 0)
+
+        def MAX(self):
+            return self.getToken(elogGeneratorParser.MAX, 0)
+
+        def DEC_CASES(self):
+            return self.getToken(elogGeneratorParser.DEC_CASES, 0)
+
+        def INT(self):
+            return self.getToken(elogGeneratorParser.INT, 0)
+
+        def getRuleIndex(self):
+            return elogGeneratorParser.RULE_dec_option
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitDec_option" ):
+                return visitor.visitDec_option(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+
+
+    def dec_option(self):
+
+        localctx = elogGeneratorParser.Dec_optionContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 24, self.RULE_dec_option)
+        try:
+            self.state = 110
+            self._errHandler.sync(self)
+            token = self._input.LA(1)
+            if token in [elogGeneratorParser.MIN]:
+                self.enterOuterAlt(localctx, 1)
+                self.state = 104
+                localctx.opt_name = self.match(elogGeneratorParser.MIN)
+                self.state = 105
+                localctx.opt_value = self.match(elogGeneratorParser.DECIMAL)
+                pass
+            elif token in [elogGeneratorParser.MAX]:
+                self.enterOuterAlt(localctx, 2)
+                self.state = 106
+                localctx.opt_name = self.match(elogGeneratorParser.MAX)
+                self.state = 107
+                localctx.opt_value = self.match(elogGeneratorParser.DECIMAL)
+                pass
+            elif token in [elogGeneratorParser.DEC_CASES]:
                 self.enterOuterAlt(localctx, 3)
-                self.state = 89
-                self.match(elogGeneratorParser.MIN)
-                self.state = 90
-                localctx.minv = self.match(elogGeneratorParser.INT)
-                self.state = 91
-                self.match(elogGeneratorParser.MAX)
-                self.state = 92
-                localctx.maxv = self.match(elogGeneratorParser.INT)
+                self.state = 108
+                localctx.opt_name = self.match(elogGeneratorParser.DEC_CASES)
+                self.state = 109
+                localctx.opt_value = self.match(elogGeneratorParser.INT)
                 pass
-
-            elif la_ == 4:
-                self.enterOuterAlt(localctx, 4)
-
-                pass
-
+            else:
+                raise NoViableAltException(self)
 
         except RecognitionException as re:
             localctx.exception = re
