@@ -86,7 +86,7 @@ For now, there are the following data types:
 	|---------|------------|------------|
 	| `MIN` | Minimum possible value. | Yes (`default: 0`) |
 	| `MAX` | Maximum possible value. | Yes (`default: 100`) |
-	| 'DEC_CASES | Number of decimal cases. | Yes (`default: 2`) |
+	| `DEC_CASES` | Number of decimal cases. | Yes (`default: 2`) |
 
 	`COLUMN foo TYPE Number MIN 10.131 MAX 11.2 DEC_CASES 3`
 
