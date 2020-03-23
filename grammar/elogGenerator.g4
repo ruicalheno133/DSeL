@@ -9,7 +9,8 @@ grammar elogGenerator;
 s       : g_type
         ;
 
-g_type  : GENERATE LOG OUTPUT FILENAME body 
+g_type  : GENERATE output=LOG OUTPUT FILENAME body 
+        | GENERATE output=DF body
         ;
 
 
@@ -68,6 +69,7 @@ TIMESTAMP_TYPE : 'Timestamp' ;
 MAX         : 'MAX';
 MIN         : 'MIN';
 DEC_CASES   : 'DEC_CASES' ;
+DF          : 'DF' ;
 
 fragment QUOTE          : '"';
 fragment LETTER         : [A-z] ; 

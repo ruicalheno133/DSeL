@@ -6,6 +6,7 @@ else:
     from elogGeneratorParser import elogGeneratorParser
 
 import random
+import pandas as pd
 
 # This class defines a complete generic visitor for a parse tree produced by elogGeneratorParser.
 
@@ -62,8 +63,16 @@ class elogGeneratorVisitor(ParseTreeVisitor):
         row += '\n'
         return row 
 
+    def build_df_row(self, case_id, activity) :
+        row = [case_id, activity] 
+
+        for c_obj in self.columns.values(): 
+            row.append(self.get_random_value(c_obj)) 
+
+        return row
+
     def build_header(self):
-        header = "CaseID, ActivityID"
+        header = "CaseID,ActivityID"
 
         for c_name in self.columns.keys():
             header += f",{c_name}"
@@ -71,20 +80,33 @@ class elogGeneratorVisitor(ParseTreeVisitor):
         header += '\n'
         return header
 
-    # Visit a parse tree produced by elogGeneratorParser#s.
-    def visitS(self, ctx:elogGeneratorParser.SContext):
-        return self.visitChildren(ctx)
+    def build_df_header(self):
+        header = ['CasedID', 'ActivityID']
 
+        for c_name in self.columns.keys():
+            header.append(c_name) 
 
-    # Visit a parse tree produced by elogGeneratorParser#g_type.
-    def visitG_type(self, ctx:elogGeneratorParser.G_typeContext):
+        return header
 
-        # Read filename and open file
-        filename = str(ctx.FILENAME())
+    def create_df(self): 
+        header = self.build_df_header()
+        rows = []
+
+        for i in range(1, self.rows + 1): 
+            # pick a random trace
+            trace = random.randrange(0, len(self.traces))
+
+            self.last_timestamp = 0
+            # create a row based on that trace
+            for a in self.traces[trace]: 
+                row = self.build_df_row(i, a)
+                rows.append(row)
+
+        return pd.DataFrame(rows, columns=header)
+
+    def create_csv(self, filename): 
+        # Open file
         f = open(filename, 'w+')
-
-        # Visit children and gather log info
-        self.visitChildren(ctx)
 
         # Build header string
         header = self.build_header()
@@ -107,6 +129,23 @@ class elogGeneratorVisitor(ParseTreeVisitor):
 
         return None
 
+    # Visit a parse tree produced by elogGeneratorParser#s.
+    def visitS(self, ctx:elogGeneratorParser.SContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by elogGeneratorParser#g_type.
+    def visitG_type(self, ctx:elogGeneratorParser.G_typeContext):
+
+        # Visit children and gather log info
+        self.visitChildren(ctx)
+
+        if ctx.output.text == "LOG": 
+            filename = str(ctx.FILENAME())
+            return self.create_csv(filename)
+            
+        elif ctx.output.text == "DF":
+            return self.create_df()
 
     # Visit a parse tree produced by elogGeneratorParser#body.
     def visitBody(self, ctx:elogGeneratorParser.BodyContext):

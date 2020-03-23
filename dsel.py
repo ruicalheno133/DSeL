@@ -15,7 +15,7 @@ def parseFile (file):
     tree = parser.s()
 
     visitor = elogGeneratorVisitor()
-    elogGeneratorVisitor().visit(tree) 
+    return elogGeneratorVisitor().visit(tree) 
 
 # Generate from string
 def parseString (str):
@@ -28,7 +28,9 @@ def parseString (str):
     tree = parser.s()
 
     visitor = elogGeneratorVisitor()
-    elogGeneratorVisitor().visit(tree) 
+    return elogGeneratorVisitor().visit(tree) 
 
 filepath = sys.argv[1]
-parseFile(filepath)
+df = parseFile(filepath)
+
+print(df)
